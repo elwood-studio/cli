@@ -16,5 +16,11 @@
   },
   "dependencies": {
     "@elwood-studio/storage-git-remote": "*"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ]
   }
 }
