@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Release
+
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # No easy way to check whether or not semantic-release released a new
+      # version, so we use artifacts as a workaround
+      - name: Get version before
+        run: echo $(curl --silent https://api.github.com/repos/elwood-studio/git-remote/releases/latest | jq .name --raw-output | cut -c 2-) > version-before
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: version-before
+          path: version-before
+
+      - name: Release on GitHub
+        run: |
+          npx semantic-release --plugins              \
+            @semantic-release/commit-analyzer         \
+            @semantic-release/release-notes-generator \
+            @semantic-release/github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # TODO: Race condition: GitHub may not update releases just in time before
+      # this step is invoked. Very unlikely to happen.
+      - name: Get version after
+        run: echo $(curl --silent https://api.github.com/repos/elwood-studio/git-remote/releases/latest | jq .name --raw-output | cut -c 2-) > version-after
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: version-after
+          path: version-after

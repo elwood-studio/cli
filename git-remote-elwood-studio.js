@@ -1,0 +1,1 @@
+require(__dirname + '/node_modules/@elwood-studio/storage-git-remote');
