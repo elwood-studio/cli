@@ -11,8 +11,8 @@ setup:
 
 dist:
 	@echo "building...";
-	${BUILD_PKG} --out-path ./dist/linux -t latest-linux-x64,latest-linux-arm64,latest-alpine
-	${BUILD_PKG} --out-path ./dist/alpine -t latest-alpine
-	${BUILD_PKG} --out-path ./dist/mac -t latest-mac
+	${BUILD_PKG} --out-path ./dist/linux -t latest-linux-x64,latest-linux-arm64
+	${BUILD_PKG} --out-path ./dist/alpine -t latest-alpine-x64,latest-alpine-arm64,
+	${BUILD_PKG} --out-path ./dist/mac -t latest-mac-x64,latest-mac-x64-arm64
 
 all: setup clean dist

@@ -9,10 +9,7 @@
   "dependencies": {
     "@elwood-studio/storage-git-remote": "latest"
   },
-  "release": {
-    "branches": [
-      "main",
-      "next"
-    ]
+  "devDependencies": {
+    "pkg": "^5.6.0"
   }
 }
