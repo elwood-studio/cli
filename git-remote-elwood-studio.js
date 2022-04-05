@@ -1,1 +1,1 @@
-require(__dirname + '/node_modules/@elwood-studio/storage-git-remote');
+require('@elwood-studio/storage-git-remote').main(process);

@@ -20,10 +20,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@elwood-studio/storage-git-remote@latest":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@elwood-studio/storage-git-remote/-/storage-git-remote-0.0.5.tgz#4d52281f59f127c0f6840e12de8d1d0bea3b0a25"
-  integrity sha512-E7AbD2hJd8CKD7bxsLbmGl7skc/RwMpVQnYfPvXkFIOQ46qCnoPmq0r+q5M5uqwRGjyIxYioW8ozH/DhmhbPxA==
+"@elwood-studio/storage-git-remote@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@elwood-studio/storage-git-remote/-/storage-git-remote-0.0.6.tgz#d28a3709db4d2f77a81c9396102f0a638bdc74a9"
+  integrity sha512-/2HNlbJC3cUKnXq9OsHjN1dwijupLtXaddqrlBvAOnZ6nmRr/yP3Jh008FZsVhWOwWhMSPsULS1DEYINUj0IYQ==
   dependencies:
     axios "^0.26.0"
     debug "^4.3.3"
@@ -52,6 +52,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@vercel/ncc@^0.33.3":
+  version "0.33.3"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.33.3.tgz#aacc6b3ea9f7b175e0c9a18c9b97e4005a2f4fcc"
+  integrity sha512-JGZ11QV+/ZcfudW2Cz2JVp54/pJNXbsuWRgSh2ZmmZdQBKXqBtIGrwI1Wyx8nlbzAiEFe7FHi4K1zX4//jxTnQ==
 
 agent-base@6:
   version "6.0.2"

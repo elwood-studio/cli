@@ -7,9 +7,10 @@
   "author": "Travis <travis@elwood.studio>",
   "license": "Apache License",
   "dependencies": {
-    "@elwood-studio/storage-git-remote": "latest"
+    "@elwood-studio/storage-git-remote": "^0.0.6"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.33.3",
     "pkg": "^5.6.0"
   }
 }
