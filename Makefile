@@ -1,12 +1,18 @@
-BUILD_PKG=./node_modules/.bin/pkg --out-path ./build ./git-remote-elwood-studio.js
+BUILD_PKG=./node_modules/.bin/pkg ./git-remote-elwood-studio.js
 
 
 clean:
 	@echo "cleanning..."
-	rm -rf ./build
+	rm -rf ./dist
 
-build:
+setup:
+	@echo "setup..."
+	yarn
+
+dist:
 	@echo "building...";
-	${BUILD_PKG} -t latest-linux-x64,latest-linux-arm64
+	${BUILD_PKG} --out-path ./dist/linux -t latest-linux-x64,latest-linux-arm64,latest-alpine
+	${BUILD_PKG} --out-path ./dist/alpine -t latest-alpine
+	${BUILD_PKG} --out-path ./dist/mac -t latest-mac
 
-all: clean build
+all: setup clean dist

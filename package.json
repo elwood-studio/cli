@@ -2,20 +2,12 @@
   "name": "git-remote-elwood-studio",
   "private": true,
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "git-remote-elwood-studio.js",
   "repository": "git@github.com:elwood-studio/git-remote.git",
   "author": "Travis <travis@elwood.studio>",
-  "license": "MIT",
-  "scripts": {
-    "pkg:linux": "pkg src/cli.ts -t latest-linux-x64 -o ./dist/git-remote-elwood-studio"
-  },
-  "workspaces": {
-    "packages": [
-      "../studio/packages/**/*"
-    ]
-  },
+  "license": "Apache License",
   "dependencies": {
-    "@elwood-studio/storage-git-remote": "*"
+    "@elwood-studio/storage-git-remote": "latest"
   },
   "release": {
     "branches": [
