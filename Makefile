@@ -8,6 +8,7 @@ clean:
 setup:
 	@echo "setup..."
 	yarn
+	yarn upgrade @elwood-studio/storage-git-remote
 
 build:
 	@echo "build..."
