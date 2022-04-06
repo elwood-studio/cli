@@ -1,7 +1,7 @@
-name: "pre-release"
+name: "release"
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   pre-release:
