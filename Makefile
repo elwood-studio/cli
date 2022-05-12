@@ -1,5 +1,3 @@
-BUILD_PKG=./node_modules/.bin/pkg 
-
 
 clean:
 	@echo "cleanning..."
@@ -8,15 +6,19 @@ clean:
 setup:
 	@echo "setup..."
 	yarn
-	yarn upgrade @elwood-studio/storage-git-remote
+	yarn upgrade
 
 build:
 	@echo "build..."
-	yarn ncc build git-remote-elwood-studio.js -t -o ./build
-	mv ./build/index.js ./build/git-remote-elwood-studio.js
+	rm -rf ./build
+	node ./scripts/build.js
 
 dist:
-	@echo "building...";
-	${BUILD_PKG} ./build/git-remote-elwood-studio.js --out-path ./dist -t latest-linux-x64,latest-linux-arm64,latest-alpine-x64,latest-alpine-arm64,latest-mac-x64,latest-mac-x64-arm64
+	@echo "packaging...";
+	rm -rf ./dist
+	node ./scripts/dist.js
 
 all: clean setup build dist
+
+
+.PHONY: build dist

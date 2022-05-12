@@ -1,5 +1,12 @@
-# Elwood Studio Git Remote
+# Elwood Studio CLI
 
 ## Source
-This repo generates build artifacts for `git-remote-elwood-studio` by importing the node package [`@elwood-studio/storage-git-remote`](https://github.com/elwood-studio/studio/packages/storage/git-remote)
+This repo generates build artifacts for Elwood Studio CLI packages.
+
+## Packages
+
+ - [elwood-studio](https://github.com/elwood-studio/studio/packages/cli)
+ - [elwood-studio-workflow-runner](https://github.com/elwood-studio/studio/packages/workflow/runner)
+ - [elwood-studio-workflow-server](https://github.com/elwood-studio/studio/packages/workflow/server)
+
 

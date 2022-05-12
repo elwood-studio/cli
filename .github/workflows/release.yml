@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v2
       - run: make all
       - run: |
-          PACKAGE_VERSION=$(cat './node_modules/@elwood-studio/storage-git-remote/package.json' | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
+          PACKAGE_VERSION=$(cat './node_modules/@elwood-studio/cli/package.json' | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
           echo "pkg_version=$PACKAGE_VERSION" >> $GITHUB_ENV
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
