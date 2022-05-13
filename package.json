@@ -7,12 +7,12 @@
   "license": "Apache License",
   "bin": "./bin/elwood-studio.js",
   "dependencies": {
-    "@elwood-studio/cli": "^0.0.19"
+    "@elwood-studio/cli": "latest"
   },
   "devDependencies": {
-    "@elwood-studio/storage-git-remote": "^0.0.19",
-    "@elwood-studio/workflow-runner": "^0.0.19",
-    "@elwood-studio/workflow-server": "^0.0.19",
+    "@elwood-studio/storage-git-remote": "latest",
+    "@elwood-studio/workflow-runner": "latest",
+    "@elwood-studio/workflow-server": "latest",
     "adm-zip": "^0.5.9",
     "@types/node": "^17.0.31",
     "@vercel/ncc": "^0.33.3",
