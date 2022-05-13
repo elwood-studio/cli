@@ -16,27 +16,24 @@ async function main() {
   const builds = await readdir(buildDir);
 
   for (const file of builds) {
-    for (const target of targets) {    
-      const out = join(
+    for (const target of targets) {
+      const binName = basename(file, extname(file));
+      const binNamePrefix = file.includes('elwood-studio')
+        ? ''
+        : 'elwood-studio-';
+      const outFile = join(distDir, binName);
+      const outZipFile = join(
         distDir,
-        `${basename(file, extname(file))}-${target.replace('node16-', '')}`,
-      )
-      
+        `${binNamePrefix}${binName}-${target.replace('node16-', '')}.zip`,
+      );
 
-      await exec([
-        join(buildDir, file),
-        '--output',
-        out,
-        '-t',
-        target,        
-      ]);
+      await exec([join(buildDir, file), '--output', outFile, '-t', target]);
 
-      const zip = new AdmZip()
-      zip.addLocalFile(out);
-      zip.writeZip(`${out}.zip`);
+      const zip = new AdmZip();
+      zip.addLocalFile(outFile);
+      zip.writeZip(outZipFile);
 
-      unlink(out);
-
+      unlink(outFile);
     }
   }
 }
